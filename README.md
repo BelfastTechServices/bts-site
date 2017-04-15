@@ -1,7 +1,7 @@
 bts
 ==============
 
-#Setup - multiple domains/ssl sites
+# Setup - multiple domains/ssl sites
 
 ```
 sudo nano /etc/apache2/sites-available/bts-ssl.conf
@@ -13,9 +13,9 @@ cd; wget https://dl.eff.org/certbot-auto; chmod a+x certbot-auto
 sudo ./certbot-auto --apache -d belfasttechservices.co.uk -d www.belfasttechservices.co.uk --agree-tos --renew-by-default --no-redirect
 ```
 
-#install
+# install
 
-##git instructions
+## git instructions
 
 ```
 sudo rm -rf bts-site /var/www/bts-ssl
