@@ -1,4 +1,4 @@
-bts
+bts-site
 ==============
 
 # Setup - multiple domains/ssl sites
@@ -19,13 +19,17 @@ sudo certbot --apache -d belfasttechservices.co.uk -d www.belfasttechservices.co
 
 ```
 sudo rm -rf bts-site /var/www/bts-ssl
+```
 
 ### https url
 
+```
 git clone https://github.com/chris18890/bts-site.git
+```
 
 ### git url
 
+```
 eval $(ssh-agent -s); ssh-add .ssh/github_rsa
 
 git clone git@github.com:chris18890/bts-site.git
