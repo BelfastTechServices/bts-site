@@ -6,8 +6,6 @@ bts-site
 ```
 sudo nano /etc/apache2/sites-available/bts-ssl.conf; sudo a2ensite bts-ssl; sudo service apache2 restart
 
-cd; sudo add-apt-repository ppa:certbot/certbot; sudo apt-get update; sudo apt-get install python-certbot-apache
-
 sudo certbot --apache -d belfasttechservices.co.uk -d www.belfasttechservices.co.uk --agree-tos --renew-by-default --no-redirect
 ```
 
