@@ -22,7 +22,7 @@ eval $(ssh-agent -s); ssh-add .ssh/github_rsa
 
 git clone git@github.com:chris18890/bts-site.git
 
-sudo cp -r bts-site/bts/ /var/www/bts-ssl
+sudo cp -r bts-site/bts/ /var/www/bts-ssl; sudo chown www-data -R /var/www
 ```
 
 # Setup - multiple domains/ssl sites
