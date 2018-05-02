@@ -38,7 +38,7 @@ sudo certbot --apache -d belfasttechservices.co.uk -d www.belfasttechservices.co
 ##set up MySQL database
 
 ```
-mysql -u root -p
+sudo mysql -u root -p
 
 CREATE DATABASE `bts-site` CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER 'bts-site'@'localhost' IDENTIFIED BY '';
