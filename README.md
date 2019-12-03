@@ -41,7 +41,7 @@ sudo certbot --apache -d belfasttechservices.co.uk -d www.belfasttechservices.co
 sudo mysql -u root -p
 
 CREATE DATABASE `bts-site` CHARACTER SET utf8 COLLATE utf8_general_ci;
-CREATE USER 'bts-site'@'localhost' IDENTIFIED BY '';
+CREATE USER 'bts-site'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 GRANT ALL PRIVILEGES ON `bts-site` . * TO 'bts-site'@'localhost';
 
 FLUSH PRIVILEGES;
