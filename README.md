@@ -41,6 +41,12 @@ nano bts-site/bts-helpdesk.conf
 sudo cp bts-site/bts-helpdesk.conf /etc/apache2/sites-available/bts-helpdesk.conf; sudo a2ensite bts-helpdesk; sudo service apache2 restart
 
 sudo certbot --apache -d helpdesk.belfasttechservices.co.uk -d www.helpdesk.belfasttechservices.co.uk --agree-tos --renew-by-default --no-redirect
+
+nano bts-site/bts-uk.conf
+
+sudo cp bts-site/bts-uk.conf /etc/apache2/sites-available/bts-uk.conf; sudo a2ensite bts-uk; sudo service apache2 restart
+
+sudo certbot --apache -d belfasttechservices.uk -d www.belfasttechservices.uk --agree-tos --renew-by-default --no-redirect
 ```
 
 ##set up MySQL database
