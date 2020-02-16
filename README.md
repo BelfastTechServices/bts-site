@@ -72,7 +72,7 @@ wget https://wordpress.org/latest.tar.gz; tar -xzvf latest.tar.gz
 
 nano wordpress/wp-config-sample.php; cp wordpress/wp-config-sample.php wordpress/wp-config.php
 
-sudo cp -r wordpress/. /var/www/bts-ssl; sudo chown www-data -R /var/www
+sudo cp -r wordpress/ /var/www/bts-ssl; sudo chown www-data -R /var/www
 
 git clone https://github.com/psignoret/aad-sso-wordpress.git
 
