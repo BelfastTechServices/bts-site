@@ -6,7 +6,7 @@ bts-site
 ## git instructions
 
 ```
-sudo rm -rf bts-site /var/www/bts-ssl
+sudo rm -rf bts-site mediawiki-* /var/www/bts-wiki /var/www/bts-ssl
 ```
 
 ### git url
@@ -29,6 +29,9 @@ sudo certbot --apache -d helpdesk.belfasttechservices.co.uk -d www.helpdesk.belf
 nano bts-site/bts-uk.conf
 sudo cp bts-site/bts-uk.conf /etc/apache2/sites-available/bts-uk.conf; sudo a2ensite bts-uk; sudo service apache2 restart
 sudo certbot --apache -d belfasttechservices.uk -d www.belfasttechservices.uk --agree-tos --renew-by-default --no-redirect
+nano bts-site/bts-wiki.conf
+sudo cp bts-site/bts-wiki.conf /etc/apache2/sites-available/bts-wiki.conf; sudo a2ensite bts-wiki; sudo service apache2 restart
+sudo certbot --apache -d wiki.belfasttechservices.co.uk -d www.wiki.belfasttechservices.co.uk --agree-tos --renew-by-default --no-redirect
 ```
 
 ## set up MySQL database
@@ -38,6 +41,9 @@ sudo mysql -u root -p
 CREATE DATABASE `bts-site` CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER 'bts-site'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 GRANT ALL PRIVILEGES ON `bts-site` . * TO 'bts-site'@'localhost';
+CREATE DATABASE `wiki` CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'wiki'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+GRANT ALL PRIVILEGES ON `wiki` . * TO 'wiki'@'localhost';
 FLUSH PRIVILEGES;
 quit
 ```
@@ -51,4 +57,8 @@ nano wordpress/wp-config-sample.php; cp wordpress/wp-config-sample.php wordpress
 sudo cp -r wordpress/ /var/www/bts-ssl; sudo chown www-data -R /var/www
 git clone https://github.com/psignoret/aad-sso-wordpress.git
 sudo cp -r aad-sso-wordpress/ /var/www/bts-ssl/wp-content/plugins/
+sudo rm -rf mediawiki-* /var/www/bts-wiki
+wget https://releases.wikimedia.org/mediawiki/1.34/mediawiki-1.34.1.tar.gz; tar -xzvf mediawiki-*.tar.gz
+nano mediawiki-1.34.1/LocalSettings.php
+sudo cp -r mediawiki-*/ /var/www/bts-wiki; sudo chown www-data -R /var/www
 ```
