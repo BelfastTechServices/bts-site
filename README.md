@@ -9,12 +9,6 @@ bts-site
 sudo rm -rf bts-site /var/www/bts-ssl /var/www/bts-helpdesk
 ```
 
-### https url
-
-```
-git clone https://github.com/chris18890/bts-site.git
-```
-
 ### git url
 
 ```
@@ -38,7 +32,7 @@ sudo cp bts-site/bts-uk.conf /etc/apache2/sites-available/bts-uk.conf; sudo a2en
 sudo certbot --apache -d belfasttechservices.uk -d www.belfasttechservices.uk --agree-tos --renew-by-default --no-redirect
 ```
 
-##set up MySQL database
+## set up MySQL database
 
 ```
 sudo mysql -u root -p
@@ -49,7 +43,7 @@ FLUSH PRIVILEGES;
 quit
 ```
 
-##wget instructions
+## wget instructions
 
 ```
 sudo rm -rf latest.tar.gz wordpress /var/www/bts-ssl
