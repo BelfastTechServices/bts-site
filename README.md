@@ -6,7 +6,7 @@ bts-site
 ## git instructions
 
 ```
-sudo rm -rf bts-site /var/www/bts-ssl /var/www/bts-helpdesk
+sudo rm -rf bts-site /var/www/bts-ssl
 ```
 
 ### git url
@@ -15,7 +15,6 @@ sudo rm -rf bts-site /var/www/bts-ssl /var/www/bts-helpdesk
 eval $(ssh-agent -s); ssh-add .ssh/github_rsa
 git clone git@github.com:chris18890/bts-site.git
 sudo cp -r bts-site/bts/ /var/www/bts-ssl; sudo chown www-data -R /var/www
-sudo cp -r bts-site/bts-helpdesk/ /var/www/bts-helpdesk; sudo chown www-data -R /var/www
 ```
 
 # Setup - multiple domains/ssl sites
