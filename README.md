@@ -42,8 +42,8 @@ CREATE DATABASE `bts-site` CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER 'bts-site'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
 GRANT ALL PRIVILEGES ON `bts-site` . * TO 'bts-site'@'localhost';
 CREATE DATABASE `wiki` CHARACTER SET utf8 COLLATE utf8_general_ci;
-CREATE USER 'wiki'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
-GRANT ALL PRIVILEGES ON `wiki` . * TO 'wiki'@'localhost';
+CREATE USER 'wikiuser'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+GRANT ALL PRIVILEGES ON `wiki` . * TO 'wikiuser'@'localhost';
 FLUSH PRIVILEGES;
 quit
 ```
