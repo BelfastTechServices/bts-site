@@ -59,6 +59,10 @@ git clone https://github.com/psignoret/aad-sso-wordpress.git
 sudo cp -r aad-sso-wordpress/ /var/www/bts-ssl/wp-content/plugins/
 sudo rm -rf mediawiki-* /var/www/bts-wiki
 wget https://releases.wikimedia.org/mediawiki/1.34/mediawiki-1.34.1.tar.gz; tar -xzvf mediawiki-*.tar.gz
-nano mediawiki-1.34.1/LocalSettings.php
 sudo cp -r mediawiki-*/ /var/www/bts-wiki; sudo chown www-data -R /var/www
+
+# browse to site, run install wizard & generate LocalSettings.php, download file, then add to install & recopy dir to web location
+
+nano mediawiki-1.34.1/LocalSettings.php
+sudo rm -rf /var/www/bts-wiki; sudo cp -r mediawiki-*/ /var/www/bts-wiki; sudo chown www-data -R /var/www
 ```
